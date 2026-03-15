@@ -1,0 +1,40 @@
+# ============================================
+# 丽水市非物质文化遗产平台 - 应用配置
+# ============================================
+# 说明：本文件为 YAML 格式，键值用冒号+空格，层级用缩进（不要用等号）
+
+spring:
+  application:
+    name: lishui-ich
+  datasource:
+    url: jdbc:mysql://localhost:3306/lishui_ich?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&createDatabaseIfNotExist=true
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQLDialect
+    open-in-view: false
+
+server:
+  port: 8080
+
+# 文件上传目录（所有图片统一存放于此；运行 jar 时请改为绝对路径）
+file:
+  upload-dir: src/main/resources/pictures
+
+# JWT
+jwt:
+  secret: lishui-ich-jwt-secret-key-please-change-in-production-2026
+  expiration: 604800000
+
+# DeepSeek AI 咨询（Key 直接写在此处，修改后需重启后端）
+deepseek:
+  api-key: sk-f26168b360cd4300a0bc275a257067be
+  api-url: https://api.deepseek.com/v1/chat/completions
+  model: deepseek-chat
