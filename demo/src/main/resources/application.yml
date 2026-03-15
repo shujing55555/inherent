@@ -35,6 +35,6 @@ jwt:
 
 # DeepSeek AI 咨询（Key 直接写在此处，修改后需重启后端）
 deepseek:
-  api-key: sk-f26168b360cd4300a0bc275a257067be
+  api-key: sk-f26168b360cd43001a0bc275a257067be
   api-url: https://api.deepseek.com/v1/chat/completions
   model: deepseek-chat
